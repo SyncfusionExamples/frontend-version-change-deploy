@@ -48,7 +48,7 @@ export const UsePoller = ({ deploymentUrl }) => {
 
                 currentMainScript = scriptRegexMatch[1] === null ? undefined : scriptRegexMatch[1];
             }
-
+            console.log(currentMainScript, remoteMainScript);
             // if the current main script, or the remote main script is undefined, we can't compare
             // but if they are there, compare them
 
@@ -64,7 +64,7 @@ export const UsePoller = ({ deploymentUrl }) => {
 
             clearInterval(createdInterval)
         };
-    }, []);
+    }, [deploymentUrl]);
 
     // return the state
 
