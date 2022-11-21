@@ -12,7 +12,7 @@ function App() {
     if (isNewVersionAvailable) {
       console.log("New version available, reloading...");
     } else {
-      console.log("No new version available");
+      console.log("No new version available...");
     }
   }, [isNewVersionAvailable])
 
