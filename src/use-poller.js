@@ -44,7 +44,8 @@ export const UsePoller = ({ deploymentUrl }) => {
                 !!currentMainScript && !!remoteMainScript && currentMainScript !== remoteMainScript
             );
 
-           
+            console.log("Current main script: ", currentMainScript);
+            console.log("Remote main script: ", remoteMainScript);
         }
 
         // compare versions every 5 seconds
