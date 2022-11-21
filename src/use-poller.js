@@ -16,7 +16,7 @@ export const UsePoller = ({ deploymentUrl }) => {
 
             const matchResponses = /^.*<script.*\/(main.*\.js).*$/.exec(loadedText);
 
-            let remoteMainScript = matchResponses.length > 1 ? matchResponses[1] : undefined;
+            let remoteMainScript = matchResponses.length > 0 ? matchResponses[1] : undefined;
             if (remoteMainScript === undefined) {
                 console.log("Could not find main script in index.html");
                 setIsNewVersionAvailable(false);
