@@ -1,7 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { UsePoller } from './use-poller';
+import { useEffect } from 'react';
+
+const INDEX_HTML_DEPLOYMENT_URL = "https://front-end-version-change-deploy.vercel.app/index.html";
 
 function App() {
+  const { isNewVersionAvailable } = UsePoller({ deploymentUrl: INDEX_HTML_DEPLOYMENT_URL });
+
+  useEffect(() => {
+    if (isNewVersionAvailable) {
+      console.log("New version available, reloading...");
+    } else {
+      console.log("No new version available");
+    }
+  }, [isNewVersionAvailable])
+
   return (
     <div className="App">
       <header className="App-header">
